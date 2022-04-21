@@ -53,7 +53,7 @@ public class UserServiceTest {
 
     @After
     public void tearDown() {
-        try (Statement statement = connection.createStatement();) {
+        try (Statement statement = connection.createStatement()) {
             statement.execute(DROP_TABLE_IF_EXIST_QUERY);
         } catch (SQLException e) {
             e.printStackTrace();
