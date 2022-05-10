@@ -19,9 +19,9 @@ public class UserServiceTest {
     private final UserService underTest = new UserServiceImpl();
     private final Connection connection;
 
-    private final String testName = "Will";
-    private final String testLastName = "Smith";
-    private final byte testAge = 40;
+    private final String testName = "Dinara";
+    private final String testLastName = "Rakhatbek kyzy";
+    private final byte testAge = 18;
 
     private static final String CREATE_TABLE_IF_NOT_EXISTS_QUERY = """
             create table if not exists users (
@@ -53,7 +53,7 @@ public class UserServiceTest {
 
     @After
     public void tearDown() {
-        try (Statement statement = connection.createStatement()) {
+        try (Statement statement = connection.createStatement();) {
             statement.execute(DROP_TABLE_IF_EXIST_QUERY);
         } catch (SQLException e) {
             e.printStackTrace();
